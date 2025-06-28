@@ -8,9 +8,11 @@ export default function TrendingMoviesSection() {
             className="p-6 text-gray-700"
         >
             <h1 className="font-bold text-3xl mb-4">Trending movies: </h1>
-            <Suspense fallback={<div>Loading...</div>}>
-                <TrendingMovies />
-            </Suspense>
+            <div className="p-2">
+                <Suspense fallback={<div>Loading...</div>}>
+                    <TrendingMovies />
+                </Suspense>
+            </div>
         </section>
     );
 }
