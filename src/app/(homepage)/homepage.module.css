@@ -1,0 +1,64 @@
+.prompt_input_container {
+    background-color: #333333;
+    padding: 5px 10px;
+    width: 100%;
+    min-height: 60px;
+    max-height: 500px;
+    align-content: center;
+    position: fixed;
+    left: 0;
+}
+
+.prompt_input {
+    border-radius: 2px;
+    background-color: #181717;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    resize: vertical;
+    max-height: 400px;
+}
+
+.prompt_input_shrinked {
+    border-radius: 2px;
+    background-color: #181717;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    resize: vertical;
+    max-height: 50px;
+}
+
+.shrink_icon_button {
+    background-color: #181717;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 20px;
+    margin: 3px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.prompt_options_container {
+    background-color: #181717;
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+    height: 40px;
+    border-bottom-left-radius: 25;
+    border-bottom-right-radius: 25;
+}
+
+.prompt_submit_button {
+    background-color: rgb(110, 110, 153);
+    width: 100px;
+    height: inherit;
+    border-bottom-right-radius: 25;
+}
+
+.prompt_filter_button {
+    background-color: rgb(110, 110, 153);
+    width: 100px;
+}
