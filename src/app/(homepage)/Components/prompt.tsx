@@ -1,26 +1,30 @@
 'use client';
 
-import styles from '../homepage.module.css' 
+import { Ref } from 'react';
+import styles from '../homepage.module.css'
 
 interface Props {
-    shrink: boolean
+  shrink: boolean,
+  reference: Ref<HTMLTextAreaElement>
 }
 
-export default ({shrink} : Props) => {
-    const promptPlaceholder = "Type something...";
 
-    const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
-        const el = e.currentTarget;
-        el.style.height = "auto";
-        el.style.height = el.scrollHeight + "px";
-    };
+export default ({ shrink, reference }: Props) => {
+  const promptPlaceholder = "Type something...";
 
-    return (
-        <textarea
-          onInput={handleInput}
-          className={!shrink ? styles.prompt_input : styles.prompt_input_shrinked}
-          placeholder={promptPlaceholder}
-          rows={1}
-        />
-    );
+  const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const el = e.currentTarget;
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  };
+
+  return (
+    <textarea
+      ref={reference}
+      onInput={handleInput}
+      className={!shrink ? styles.prompt_input : styles.prompt_input_shrinked}
+      placeholder={promptPlaceholder}
+      rows={1}
+    />
+  );
 }

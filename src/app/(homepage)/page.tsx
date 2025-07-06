@@ -3,10 +3,11 @@
 import styles from "./homepage.module.css";
 
 import PromptComponent from "./Components/prompt";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ShrinkArrowSVG, UnshrinkArrowSVG } from "./SvgIcons/arrow";
+import PromptButton from "./Components/submitButton";
 
 export default function Home() {
-  const userPrompt = "I Want a movie where the main character die at the end.";
   const [keyboardOffset, setKeyboardOffset] = useState(0);
   useEffect(() => {
     const updateKeyboardOffset = () => {
@@ -36,24 +37,8 @@ export default function Home() {
 
   const [isShrinked, setIsShrinked] = useState(false);
 
-  const fetchPromptResult = async () => {
-    const resp = await fetch("https://localhost:4040/api/v1/search", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        movie_name: userPrompt,
-        page_number: 2,
-      }),
-    });
-
-    
-    console.log(await resp.json())
-  };
-
-  const filterPromptResult = () => {};
+  const filterPromptResult = () => { };
+  const promptRef = useRef<HTMLTextAreaElement>(null)
 
   return (
     <>
@@ -69,7 +54,7 @@ export default function Home() {
         >
           {!isShrinked ? ShrinkArrowSVG() : UnshrinkArrowSVG()}
         </button>
-        <PromptComponent shrink={isShrinked} />
+        <PromptComponent shrink={isShrinked} reference={promptRef} />
         <div className={styles.prompt_options_container}>
           <div className="flex-grow" />
           <button
@@ -78,46 +63,9 @@ export default function Home() {
           >
             Filter
           </button>
-          <button
-            onClick={fetchPromptResult}
-            className={styles.prompt_submit_button}
-          >
-            Search
-          </button>
+          <PromptButton ref={promptRef} />
         </div>
       </div>
     </>
   );
 }
-
-const ShrinkArrowSVG = () => {
-  return (
-    <svg
-      className="w-5 h-5 text-gray-500"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-    >
-      <path
-        fillRule="evenodd"
-        d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-};
-
-const UnshrinkArrowSVG = () => {
-  return (
-    <svg
-      className="w-5 h-5 text-gray-500 rotate-180"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-    >
-      <path
-        fillRule="evenodd"
-        d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-};
