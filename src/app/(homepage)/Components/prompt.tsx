@@ -4,12 +4,11 @@ import { Ref } from 'react';
 import styles from '../homepage.module.css'
 
 interface Props {
-  shrink: boolean,
   reference: Ref<HTMLTextAreaElement>
 }
 
 
-export default ({ shrink, reference }: Props) => {
+export default ({ reference }: Props) => {
   const promptPlaceholder = "Type something...";
 
   const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
@@ -22,7 +21,7 @@ export default ({ shrink, reference }: Props) => {
     <textarea
       ref={reference}
       onInput={handleInput}
-      className={!shrink ? styles.prompt_input : styles.prompt_input_shrinked}
+      className={styles.prompt_input}
       placeholder={promptPlaceholder}
       rows={1}
     />

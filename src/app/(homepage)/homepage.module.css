@@ -1,12 +1,32 @@
+.homepage_main {
+    background-color: #181717;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt_search_result_container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow-y: scroll;
+    height: calc(100% - 100px);
+}
+
+.prompt_search_result_item {
+    background-color: #333333;
+}
+
 .prompt_input_container {
     background-color: #333333;
     padding: 5px 10px;
     width: 100%;
-    min-height: 60px;
+    min-height: 100px;
     max-height: 500px;
     align-content: center;
     position: fixed;
-    left: 0;
+    bottom: 0;
 }
 
 .prompt_input {
@@ -15,30 +35,8 @@
     width: 100%;
     color: white;
     padding: 10px;
-    resize: vertical;
+    resize: none;
     max-height: 400px;
-}
-
-.prompt_input_shrinked {
-    border-radius: 2px;
-    background-color: #181717;
-    width: 100%;
-    color: white;
-    padding: 10px;
-    resize: vertical;
-    max-height: 50px;
-}
-
-.shrink_icon_button {
-    background-color: #181717;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    height: 20px;
-    margin: 3px auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
 }
 
 .prompt_options_container {

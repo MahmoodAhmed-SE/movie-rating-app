@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { EXTERNAL_API_ADDR } from "../config";
 
+
 class ExternalApiRequest {
   constructor(public movie_name: string, public page_number: number) {}
 }
@@ -26,35 +27,53 @@ export const POST = async (req: NextRequest) => {
     });
 
     const apiStatus = externalResponse.status;
+    if (apiStatus == 401) {
+      console.error("module=prompt method=post error=unauthorized_request_err err=" + await externalResponse.text());
+      
+      return NextResponse.json(
+        { message: "Unauthorized Request"},
+        { status: apiStatus }
+      );
+    }
+
     const responseJson = await externalResponse.json();
 
     let response;
 
-    if (apiStatus >= 200 && apiStatus < 300) {
+    if (apiStatus == 200) {
       response = NextResponse.json(
         { message: "Prompt processed successfully", data: responseJson },
         { status: apiStatus }
       );
-    } else if (apiStatus >= 400 && apiStatus < 500) {
+    } else if (apiStatus == 400) {
+      console.error("module=prompt method=post error=bad_request_err err=" + responseJson);
+      
       return NextResponse.json(
-        { message: "Client error on external API", details: responseJson },
+        { message: "Client error on external API"},
         { status: apiStatus }
       );
-    } else if (apiStatus >= 500) {
+    } else if (apiStatus == 500) {
+      console.error("module=prompt method=post error=internal_server_err err=" + responseJson);
       return NextResponse.json(
-        { message: "External server error" },
+        { message: "Internal server error" },
+        { status: apiStatus }
+      );
+    } else if (apiStatus == 422) {
+      return NextResponse.json(
+        { message: "Invalid page number" },
         { status: apiStatus }
       );
     } else {
+      console.error("module=prompt method=post error=unexpected_status_code_err err=" + responseJson);
       return NextResponse.json(
         { message: "Unexpected response from external API" },
         { status: apiStatus }
       );
     }
-
+    
     return response;
   } catch (error) {
-    console.error("Error processing prompt:", error);
+    console.error("module=prompt method=post error=processing_prompt_err err=" + error);
     return NextResponse.json(
       { message: "Internal Server Error" },
       { status: 500 }
