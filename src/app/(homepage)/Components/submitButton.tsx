@@ -1,6 +1,7 @@
 import { RefObject } from "react";
 import styles from "../homepage.module.css";
 import { useRouter } from "next/navigation";
+import { Result } from "@/models/prompts";
 
 class ExternalApiRequest {
     constructor(
@@ -9,34 +10,18 @@ class ExternalApiRequest {
     ) { }
 }
 
-type Result = {
-    id: string
-    title: string
-    plot: string
-    transcript: string
-    year_made: string
-    authors: string
-    directors: string
-    actors: string
-    genres: string
-    languages: string
-    runtime_minutes: string
-    rating: string
-    tags: string
-    combination_embedding: string
-    created_at: string
-    updated_at: string
-}
 
 const submitPromptTextarea = async (
     ref: RefObject<HTMLTextAreaElement | null>,
     router: ReturnType<typeof useRouter>,
-    setResults: any
+    setResults: any,
+    setStatus: any
 ) => {
     if (ref.current) {
         const movie_prompt = ref.current.value;
         const page_number = 1;
 
+        setStatus("pending")
         const response = await fetch("api/prompt", {
             method: "POST",
             credentials: "include",
@@ -48,10 +33,11 @@ const submitPromptTextarea = async (
             try {
                 const data = await response.json();
                 setResults((results: Result[]) => {
+                    setStatus("success")
                     return (data.data) as Result;
                 })
-            } catch(err) {
-
+            } catch (err) {
+                setStatus("failed")
             }
         } else if (response.status == 401) {
             router.push("/login")
@@ -61,12 +47,13 @@ const submitPromptTextarea = async (
     }
 }
 
+type Props = { ref: RefObject<HTMLTextAreaElement | null>, setResults: any, setStatus: any }
 
-export default function PromptButton({ ref, setResults }: { ref: RefObject<HTMLTextAreaElement | null>, setResults: any}) {
+export default function PromptButton({ ref, setResults, setStatus }: Props) {
     const router = useRouter();
     return (
         <button
-            onClick={() => submitPromptTextarea(ref, router, setResults)}
+            onClick={() => submitPromptTextarea(ref, router, setResults, setStatus)}
             className={styles.prompt_submit_button}
         >
             Search

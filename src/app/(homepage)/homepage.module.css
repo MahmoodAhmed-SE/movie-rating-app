@@ -5,13 +5,16 @@
     flex-direction: column;
 }
 
-.prompt_search_result_container {
+.promptContentContainer {
     background-color: black;
+    overflow-y: scroll;
+    height: calc(100% - 100px);
+}
+
+.prompt_search_result_container {
     display: flex;
     flex-direction: column;
     gap: 3px;
-    overflow-y: scroll;
-    height: calc(100% - 100px);
 }
 
 .prompt_search_result_item {
@@ -25,8 +28,6 @@
     min-height: 100px;
     max-height: 500px;
     align-content: center;
-    position: fixed;
-    bottom: 0;
 }
 
 .prompt_input {
@@ -60,3 +61,14 @@
     background-color: rgb(110, 110, 153);
     width: 100px;
 }
+
+
+.searchListLoadingIndicator {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+/* .searchListLoadingIndicatorSVG {
+    margin: auto;
+    height:70px;
+} */

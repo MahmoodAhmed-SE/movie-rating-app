@@ -5,26 +5,10 @@ import styles from "./homepage.module.css";
 import PromptComponent from "./Components/prompt";
 import { useEffect, useRef, useState } from "react";
 import PromptButton from "./Components/submitButton";
+import PromptSearchContent from "./Components/promptSearchContent";
 
 
-type Result = {
-  id: string
-  title: string
-  plot: string
-  transcript: string
-  year_made: string
-  authors: string
-  directors: string
-  actors: string
-  genres: string
-  languages: string
-  runtime_minutes: string
-  rating: string
-  tags: string
-  combination_embedding: string
-  created_at: string
-  updated_at: string
-}
+
 
 export default function Home() {
   const [keyboardOffset, setKeyboardOffset] = useState(0);
@@ -36,22 +20,15 @@ export default function Home() {
   const promptRef = useRef<HTMLTextAreaElement>(null)
 
   const [results, setResults] = useState([]);
+  const [promptStatus, setPromptStatus] = useState("no-action") // success, failed, pending, no-action
+
+
+
   return (
     <main className={styles.homepage_main}>
-      <div className={styles.prompt_search_result_container}>
-        {
-          results.map((watchItem: Result) => {
-            return (
-              <div className={styles.prompt_search_result_item} key={watchItem.id}>
-                <div>id:{watchItem.id}</div>
-                <div>title:{watchItem.title}</div>
-                <div>year:{watchItem.year_made}</div>
-              </div>
-            );
-          })
-        }
+      <div className={styles.promptContentContainer}>
+        <PromptSearchContent promptStatus={promptStatus} results={results} />
       </div>
-
 
       <div
         className={styles.prompt_input_container}
@@ -66,7 +43,7 @@ export default function Home() {
           >
             Filter
           </button>
-          <PromptButton ref={promptRef} setResults={setResults} />
+          <PromptButton ref={promptRef} setResults={setResults} setStatus={setPromptStatus}/>
         </div>
       </div>
     </main>
