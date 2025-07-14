@@ -6,6 +6,7 @@ import PromptComponent from "./Components/prompt";
 import { useEffect, useRef, useState } from "react";
 import PromptButton from "./Components/submitButton";
 import PromptSearchContent from "./Components/promptSearchContent";
+import Header from "../components/header/Header";
 
 
 
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <main className={styles.homepage_main}>
+      <Header />
       <div className={styles.promptContentContainer}>
         <PromptSearchContent promptStatus={promptStatus} results={results} />
       </div>

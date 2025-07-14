@@ -8,7 +8,7 @@
 .promptContentContainer {
     background-color: black;
     overflow-y: scroll;
-    height: calc(100% - 100px);
+    height: 80vh;
 }
 
 .prompt_search_result_container {
@@ -25,9 +25,12 @@
     background-color: #333333;
     padding: 5px 10px;
     width: 100%;
-    min-height: 100px;
+    min-height: 10vh;
     max-height: 500px;
     align-content: center;
+    position: fixed;
+    bottom: 0;
+    
 }
 
 .prompt_input {

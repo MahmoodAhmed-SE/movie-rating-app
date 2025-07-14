@@ -3,6 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import SearchList from './searchList';
 import styles from '../homepage.module.css';
+import NoActionSearchContent from './searchContent/noActionSearchContent';
 
 type Props = {
     promptStatus: string,
@@ -13,7 +14,7 @@ export default function PromptSearchContent({ promptStatus, results }: Props) {
     let promptSearchContent;
     switch (promptStatus) {
         case "no-action":
-            promptSearchContent = <div className="bg-white ">Most Popular movies...</div>
+            promptSearchContent = <NoActionSearchContent />
             break;
         case "success":
             promptSearchContent = <div className={styles.prompt_search_result_container}>

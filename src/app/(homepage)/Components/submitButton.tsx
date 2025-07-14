@@ -21,6 +21,10 @@ const submitPromptTextarea = async (
         const movie_prompt = ref.current.value;
         const page_number = 1;
 
+        if (movie_prompt.trim().length == 0) {
+            return;
+        }
+
         setStatus("pending")
         const response = await fetch("api/prompt", {
             method: "POST",
@@ -41,9 +45,12 @@ const submitPromptTextarea = async (
             }
         } else if (response.status == 401) {
             router.push("/login")
+        } else {
+            setStatus("failed")
         }
     } else {
         // handle no ref
+        setStatus("failed")
     }
 }
 
