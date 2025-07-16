@@ -26,7 +26,7 @@ type Result = {
 export default function SearchList({ results }: Props) {
 
 	return (
-		<>
+		<div className={styles.prompt_search_result_container}>
 			{
 				results.map((watchItem: Result) => {
 					return (
@@ -38,6 +38,6 @@ export default function SearchList({ results }: Props) {
 					);
 				})
 			}
-		</>
+		</div>
 	);
 }

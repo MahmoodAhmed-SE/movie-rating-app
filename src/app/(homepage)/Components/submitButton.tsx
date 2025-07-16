@@ -37,7 +37,8 @@ const submitPromptTextarea = async (
             try {
                 const data = await response.json();
                 setResults((results: Result[]) => {
-                    setStatus("success")
+                    setStatus("success");
+                    console.log(data.data);
                     return (data.data) as Result;
                 })
             } catch (err) {

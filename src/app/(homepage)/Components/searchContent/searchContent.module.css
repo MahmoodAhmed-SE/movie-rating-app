@@ -1,5 +1,15 @@
 .noActionContainer {
+    color: white;
+    height: 100%;
+    padding: 10px;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+}
+
+.noActionParagraph {
+    background-color: #333333;
+    border-radius: 15px;
+    padding: 10px;
 }

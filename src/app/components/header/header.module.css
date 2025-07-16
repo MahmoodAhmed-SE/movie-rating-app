@@ -16,6 +16,7 @@
     background-color: #333333;
     width: 10vh;
     height: fit-content;
+    width: 200px;
     display: flex;
     flex-direction: column;
     gap: 3px;
