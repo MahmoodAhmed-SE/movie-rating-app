@@ -32,12 +32,12 @@ export default function SearchList({ results }: Props) {
 					return (
 						<div className={styles.prompt_search_result_item} key={watchItem.id}>
 							<div className={styles.prompt_search_result_item_header}>
-								<span className={styles.prompt_search_result_item_id}>
+								<div className={styles.prompt_search_result_item_id}>
 									#{watchItem.id}
-								</span>
-								<span className={styles.prompt_search_result_item_title}>
+								</div>
+								<div className={styles.prompt_search_result_item_title}>
 									{watchItem.title}
-								</span>
+								</div>
 							</div>
 							<div className={styles.prompt_search_result_item_year}>
 								Year: {new Date(watchItem.year_made).getFullYear()}
