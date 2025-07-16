@@ -31,9 +31,17 @@ export default function SearchList({ results }: Props) {
 				results.map((watchItem: Result) => {
 					return (
 						<div className={styles.prompt_search_result_item} key={watchItem.id}>
-							<div>id:{watchItem.id}</div>
-							<div>title:{watchItem.title}</div>
-							<div>year:{watchItem.year_made}</div>
+							<div className={styles.prompt_search_result_item_header}>
+								<span className={styles.prompt_search_result_item_id}>
+									#{watchItem.id}
+								</span>
+								<span className={styles.prompt_search_result_item_title}>
+									{watchItem.title}
+								</span>
+							</div>
+							<div className={styles.prompt_search_result_item_year}>
+								Year: {new Date(watchItem.year_made).getFullYear()}
+							</div>
 						</div>
 					);
 				})

@@ -21,5 +21,25 @@
 }
 
 .prompt_search_result_item {
+    padding: 5px;
     background-color: #333333;
+    color: white;
+}
+
+.prompt_search_result_item_header {
+    padding-bottom: 5px;
+    display: flex;
+    gap: 15px;
+}
+
+.prompt_search_result_item_id {
+    color: rgb(46, 139, 214);
+}
+
+.prompt_search_result_item_title {
+    font-size: 20px;
+}
+
+.prompt_search_result_item_year {
+    font-size: 14px;
 }
