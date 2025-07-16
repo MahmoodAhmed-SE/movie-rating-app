@@ -1,7 +1,7 @@
 'use client';
 
 import { Ref } from 'react';
-import styles from '../homepage.module.css'
+import styles from './prompt.module.css';
 
 interface Props {
   reference: Ref<HTMLTextAreaElement>

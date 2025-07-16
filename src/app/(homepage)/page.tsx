@@ -2,10 +2,10 @@
 
 import styles from "./homepage.module.css";
 
-import PromptComponent from "./Components/prompt";
+import PromptComponent from "./Components/prompt/prompt";
 import { useEffect, useRef, useState } from "react";
-import PromptButton from "./Components/submitButton";
-import PromptSearchContent from "./Components/promptSearchContent";
+import PromptButton from "./Components/prompt/submitButton";
+import PromptSearchContent from "./Components/prompt/promptSearchContent";
 import Header from "../components/header/Header";
 
 

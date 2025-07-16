@@ -1,5 +1,5 @@
 import { RefObject } from "react";
-import styles from "../homepage.module.css";
+import styles from "./prompt.module.css";
 import { useRouter } from "next/navigation";
 import { Result } from "@/models/prompts";
 

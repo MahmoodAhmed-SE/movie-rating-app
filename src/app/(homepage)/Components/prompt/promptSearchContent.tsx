@@ -1,8 +1,8 @@
-import { Result } from '../../../models/prompts';
+import { Result } from '../../../../models/prompts';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import SearchList from './searchList';
-import NoActionSearchContent from './searchContent/noActionSearchContent';
+import SearchList from '../searchContent/searchList';
+import NoActionSearchContent from '../searchContent/noActionSearchContent';
 
 type Props = {
     promptStatus: string,

@@ -13,3 +13,13 @@
     border-radius: 15px;
     padding: 10px;
 }
+
+.prompt_search_result_container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.prompt_search_result_item {
+    background-color: #333333;
+}

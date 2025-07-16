@@ -1,4 +1,4 @@
-import styles from '../homepage.module.css';
+import styles from './searchContent.module.css';
 
 type Props = {
 	results: Result[]
