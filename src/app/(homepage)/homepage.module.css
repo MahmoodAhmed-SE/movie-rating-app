@@ -7,8 +7,8 @@
 
 .promptContentContainer {
     background-color: black;
-    overflow-y: scroll;
-    height: 80vh;
+    overflow-y: auto;
+    flex: 1;
 }
 
 .prompt_input_container {
@@ -17,10 +17,7 @@
     width: 100%;
     min-height: 10vh;
     max-height: 500px;
-    align-content: center;
-    position: fixed;
-    bottom: 0;
-    
+    align-content: center;    
 }
 
 .prompt_options_container {
