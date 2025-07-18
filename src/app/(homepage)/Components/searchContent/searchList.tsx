@@ -1,3 +1,4 @@
+import { useRouter } from 'next/navigation';
 import styles from './searchContent.module.css';
 
 type Props = {
@@ -24,13 +25,19 @@ type Result = {
 }
 
 export default function SearchList({ results }: Props) {
+	const router = useRouter();
+
+	const redirectToMoviePage = (id: string) => {
+		router.push("/movie/" + id)
+	}
+
 
 	return (
 		<div className={styles.prompt_search_result_container}>
 			{
 				results.map((watchItem: Result) => {
 					return (
-						<div className={styles.prompt_search_result_item} key={watchItem.id}>
+						<div className={styles.prompt_search_result_item} key={watchItem.id} onClick={() => redirectToMoviePage(watchItem.id)}>
 							<div className={styles.prompt_search_result_item_header}>
 								<div className={styles.prompt_search_result_item_id}>
 									#{watchItem.id}
