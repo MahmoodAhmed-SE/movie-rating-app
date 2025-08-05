@@ -37,7 +37,7 @@ export default function SearchList({ results }: Props) {
 			{
 				results.map((watchItem: Result) => {
 					return (
-						<div className={styles.prompt_search_result_item} key={watchItem.id} onClick={() => redirectToMoviePage(watchItem.id)}>
+						<div className={styles.prompt_search_result_item} key={watchItem.id} /*onClick={() => redirectToMoviePage(watchItem.id)}*/>
 							<div className={styles.prompt_search_result_item_header}>
 								<div className={styles.prompt_search_result_item_id}>
 									#{watchItem.id}
