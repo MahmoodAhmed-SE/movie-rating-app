@@ -11,6 +11,6 @@
 .prompt_submit_button {
     background-color: rgb(110, 110, 153);
     width: 100px;
-    height: inherit;
+    height: 100%;
     border-bottom-right-radius: 25;
 }
