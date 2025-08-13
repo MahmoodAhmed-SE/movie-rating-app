@@ -3,7 +3,7 @@
 }
 
 .login_form_container {
-  background-color: #333333;
+  background-color: var(--bg-main-dark);
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -13,27 +13,41 @@
 }
 
 .login_header_container {
-  padding-top: 50px;
+  padding-top: 8.47vh;
   height: 200px;
   text-align: center;
-  font-size: 35px;
+  font-size: clamp(1rem, 4.39vh, 3rem);
   font-weight: bold;
   color: var(--text-main-dark);
 }
 
 .login_form {
   flex-grow: 1;
-  padding: 10px;
+  margin-top: 8vh;
   width: 100%;
   min-height: 300px;
-  max-height: 350px;
   display: flex;
   flex-direction: column;
 }
 
 .submit_message {
-  text-align: center;
-  color: var(--text-error-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--error-message);
+}
+
+.error_icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error_icon_container img {
+  width: 17px;
+  height: 17px;
 }
 
 .inputs_container {
@@ -43,37 +57,60 @@
   gap: 16px;
   flex-grow: 1;
   width: 100%;
+  align-items: center;
 }
 
 .inputs_container div input {
-  width: 100%;
-  background-color: #555555;
-  font-size: 20px;
-  height: 50px;
+  width: 88.83vw;
+  background-color: var(--bg-secondary-dark);
+  font-size: clamp(1rem, 2.14vh, 2rem);
+  height: clamp(50px, 6.11vh, 200px);
   padding: 10px;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--text-main-dark)
+  color: var(--text-main-dark);
 }
 
 .inputs_container div input::placeholder {
   color: var(--text-main-dark);
 }
 
-.inputs_container div .forgot_password_container {
-  margin-top: 10px;
+.inputs_container div.password_container {
+  position: relative;
+}
+
+.inputs_container div.password_container .password_input {
+  padding-right: 50px;
+}
+
+.inputs_container div.password_container .password_eye_container {
+  height: 100%;
+  display: flex;
+  width: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.inputs_container .forgot_password_container {
+  width: 100%;
+  padding-right: 5vw;
   text-align: end;
 }
-.inputs_container div .forgot_password_container a { 
+
+.inputs_container .forgot_password_container a {
   color: var(--text-main-dark);
   text-decoration: none;
 }
 
 .form_submit_button {
-  background: linear-gradient(45deg, rgb(134, 114, 0), rgb(92, 78, 0));
-  width: 230px;
+  background: linear-gradient(45deg, #533e04, #3c2701);
+  width: 60.93vw;
   color: var(--text-main-dark);
-  height: 40px;
+  height: clamp(50px, 6vh, 100px);
   margin: auto;
   border: none;
   border-radius: var(--border-radius);
@@ -81,6 +118,7 @@
 }
 
 .divider_container {
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -105,6 +143,7 @@
 .invisible {
   visibility: hidden;
 }
+
 .visible {
   visibility: visible;
 }
@@ -117,14 +156,15 @@
 }
 
 .auth_providers_container div {
-  background-color: white;
   height: 100px;
   width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .registeration_question_container {
   text-align: center;
-  margin-top: 10px;
+  margin: 20px 0px;
 }
 
 .signup_link {
