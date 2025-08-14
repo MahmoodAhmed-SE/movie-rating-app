@@ -9,7 +9,7 @@ interface Props {
 
 
 export default ({ reference }: Props) => {
-  const promptPlaceholder = "Type something...";
+  const promptPlaceholder = "Search movies by theme, traits, or plot...";
 
   const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
     const el = e.currentTarget;

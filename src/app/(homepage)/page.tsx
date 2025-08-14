@@ -17,7 +17,6 @@ export default function Home() {
     handleKeyboardOffset(setKeyboardOffset)
   }, []);
 
-  const filterPromptResult = () => { };
   const promptRef = useRef<HTMLTextAreaElement>(null)
 
   const [results, setResults] = useState([]);
@@ -38,14 +37,15 @@ export default function Home() {
       >
         <PromptComponent reference={promptRef} />
         <div className={styles.prompt_options_container}>
-          <div className="flex-grow" />
-          <button
-            onClick={filterPromptResult}
-            className={styles.prompt_filter_button}
-          >
-            Filter
-          </button>
-          <PromptButton ref={promptRef} setResults={setResults} setStatus={setPromptStatus}/>
+          <div>
+            <img src="/prompt/attach_icon.svg" alt="Attach icon button." />
+          </div>
+          <div className={styles.search_options_container}>
+            <img src="/prompt/options_icon.svg" alt="Options icon button." />
+            <div>Search Options</div>
+          </div>
+          <div style={{flexGrow: 1}}></div>
+          <PromptButton ref={promptRef} setResults={setResults} setStatus={setPromptStatus} />
         </div>
       </div>
     </main>

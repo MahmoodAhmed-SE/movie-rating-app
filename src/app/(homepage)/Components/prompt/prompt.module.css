@@ -1,16 +1,22 @@
-.prompt_input {
-    border-radius: 2px;
-    background-color: #181717;
-    width: 100%;
-    color: white;
-    padding: 10px;
-    resize: none;
-    max-height: 400px;
+:root {
+  --border-radius: 15px;
 }
 
-.prompt_submit_button {
-    background-color: rgb(110, 110, 153);
-    width: 100px;
-    height: 100%;
-    border-bottom-right-radius: 25;
+.prompt_input {
+  min-height: 6.33vh;
+  max-height: 400px;
+  font-size: 2.14vh;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary-dark);
+  width: 100%;
+  color: white;
+  padding: 10px;
+  border: none;
+  resize: none;
+  line-height: 6.33vh;
+  font-family: Roboto, sans-serif;
+}
+
+.prompt_input::placeholder {
+  color: white;
 }

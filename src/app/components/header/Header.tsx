@@ -6,10 +6,7 @@ import ProfileButton from './profileButton';
 export default function Header() {
     return (
         <header className={styles.header}>
-            <Link href={"/"}>
-                <Logo />
-            </Link>
-            <ProfileButton />
+            <img src="/header/menu_button.svg" alt="Menu button." />
         </header>
     );
 }

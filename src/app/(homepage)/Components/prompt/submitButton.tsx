@@ -60,11 +60,11 @@ type Props = { ref: RefObject<HTMLTextAreaElement | null>, setResults: any, setS
 export default function PromptButton({ ref, setResults, setStatus }: Props) {
     const router = useRouter();
     return (
-        <button
+        <div
             onClick={() => submitPromptTextarea(ref, router, setResults, setStatus)}
             className={styles.prompt_submit_button}
         >
-            Search
-        </button>
+            <img src="/prompt/search_icon.svg" alt="Search icon button." />
+        </div>
     );
 }

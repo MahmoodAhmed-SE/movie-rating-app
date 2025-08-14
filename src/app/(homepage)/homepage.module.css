@@ -1,42 +1,34 @@
 .homepage_main {
-    background-color: #181717;
+    background-color: var(--bg-main-dark);
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .promptContentContainer {
-    background-color: black;
     overflow-y: auto;
     flex: 1;
 }
 
 .prompt_input_container {
-    background-color: #333333;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
     width: 100%;
-    min-height: 10vh;
+    min-height: 16.95vh;
     max-height: 500px;
-    align-content: center;    
+    align-content: center;
 }
 
 .prompt_options_container {
-    background-color: #181717;
     display: flex;
-    justify-content: space-between;
-    gap: 2px;
-    height: 40px;
-    border-bottom-left-radius: 25;
-    border-bottom-right-radius: 25;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
 }
 
-.prompt_filter_button {
-    background-color: rgb(110, 110, 153);
-    width: 100px;
-}
-
-.searchListLoadingIndicator {
-    background-color: black;
-    height: 100%;
-    width: 100%;
+.search_options_container {
+    display: flex;
+    gap: 10px;
+    width: 200px;
 }

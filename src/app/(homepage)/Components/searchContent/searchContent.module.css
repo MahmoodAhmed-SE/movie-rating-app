@@ -9,7 +9,7 @@
 }
 
 .noActionParagraph {
-    background-color: #333333;
+    background-color: var(--bg-secondary-dark);
     border-radius: 15px;
     padding: 10px;
 }
@@ -22,7 +22,7 @@
 
 .prompt_search_result_item {
     padding: 5px;
-    background-color: #333333;
+    background-color: var(--bg-secondary-dark);
     color: white;
 }
 
