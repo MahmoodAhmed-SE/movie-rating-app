@@ -3,17 +3,17 @@
 }
 
 .prompt_input {
-  min-height: 6.33vh;
+  min-height: 5vh;
   max-height: 400px;
+  line-height: 5vh;
   font-size: 2.14vh;
   border-radius: var(--border-radius);
   background-color: var(--bg-secondary-dark);
   width: 100%;
   color: white;
   padding: 10px;
-  border: none;
+  border: 1px solid var(--search-border-color-dark);
   resize: none;
-  line-height: 6.33vh;
   font-family: Roboto, sans-serif;
 }
 

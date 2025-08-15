@@ -2,7 +2,9 @@
 
 :root {
   --bg-main-dark: #141414;
-  --bg-secondary-dark: #1D1D1D;
+  --bg-secondary-dark: #2B2B2B;
+  
+  --search-border-color-dark: #333333;
 
   --text-main-dark: #ffffff;
   

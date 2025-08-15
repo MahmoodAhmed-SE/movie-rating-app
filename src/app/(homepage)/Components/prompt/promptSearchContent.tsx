@@ -3,6 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import SearchList from '../searchContent/searchList';
 import NoActionSearchContent from '../searchContent/noActionSearchContent';
+import ErrorOccured from '../searchContent/errors/error_occured';
 
 type Props = {
     promptStatus: string,
@@ -16,7 +17,7 @@ export default function PromptSearchContent({ promptStatus, results }: Props) {
         case "success":
             return <SearchList results={results} />
         case "failed":
-            return <div>Error occured!</div>
+            return <ErrorOccured />
         case "pending":
             return <Skeleton
                 className="w-full h-full"
