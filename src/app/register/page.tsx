@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./register.module.css";
-import { submitRegisterForm } from "./registerSubmission";
+import { submitRegisterForm } from "./register_submission";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";

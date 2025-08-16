@@ -4,8 +4,8 @@ import styles from "./homepage.module.css";
 
 import PromptComponent from "./Components/prompt/prompt";
 import { useEffect, useRef, useState } from "react";
-import PromptButton from "./Components/prompt/submitButton";
-import PromptSearchContent from "./Components/prompt/promptSearchContent";
+import PromptButton from "./Components/prompt/submit_button";
+import PromptSearchContent from "./Components/prompt/prompt_search_content";
 import Header from "../components/header/Header";
 
 

@@ -1,0 +1,27 @@
+.no_action_container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 100%;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.no_action_container h1 {
+    margin-top: 10vh;
+    font-size: 2.14vh;
+}
+
+.no_action_container h2 {
+    margin-top: 70px;
+    font-size: 2.14vh;
+}
+
+.no_action_container p {
+    margin-top: 10px;
+    background-color: var(--bg-secondary-dark);
+    border-radius: 5px;
+    padding: 10px;
+}

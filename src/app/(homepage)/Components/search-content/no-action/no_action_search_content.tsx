@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './searchContent.module.css';
+import styles from './no_action.module.css';
 
 export default function NoActionSearchContent() {
     return (
