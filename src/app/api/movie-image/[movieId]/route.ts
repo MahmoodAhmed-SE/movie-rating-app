@@ -27,7 +27,7 @@ export const GET = async (
 
   const data = await resp.json();
 
-  const filePath = path.join(MOVIE_POSTER_IMAGES_PATH, data.directory);
+  const filePath = path.join(MOVIE_POSTER_IMAGES_PATH, data.image_path);
 
   if (!fs.existsSync(filePath)) {
     return NextResponse.json("Not found", {
@@ -39,7 +39,7 @@ export const GET = async (
 
   return new NextResponse(imageBuffer, {
     headers: {
-      "Content-Type": "image/png",
+      "Content-Type": "image/jpg",
       "Content-Length": imageBuffer.length.toString(),
     },
   });

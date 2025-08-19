@@ -12,8 +12,9 @@
 
 .image_container img {
   width: 26.74vw;
+  height: 18.45vh;
   object-fit: cover;
-  border-radius: inherit;
+  border-radius: 5px;
 }
 
 .content_container {

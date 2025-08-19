@@ -28,7 +28,7 @@ export default function SearchItem({ watchItem }: Props) {
 	return (
 		<div className={styles.result_container} /*onClick={() => redirectToMoviePage(watchItem.id)}*/>
 			<div className={styles.image_container}>
-				<img src={undefined} alt="image" />
+				<img src={`/api/movie-image/${watchItem.id}`} alt={`Poster image for movie ${watchItem.title}`} />
 			</div>
 			<div className={styles.content_container}>
 				<h1 className={styles.title}>
