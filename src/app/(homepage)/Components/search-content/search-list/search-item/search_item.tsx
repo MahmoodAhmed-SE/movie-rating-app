@@ -1,23 +1,5 @@
+import { Result } from '../dto';
 import styles from './search_item.module.css';
-
-type Result = {
-	id: string
-	title: string
-	plot: string
-	transcript: string
-	year_made: string
-	authors: string
-	directors: string
-	actors: string
-	genres: string
-	languages: string
-	runtime_minutes: string
-	rating: string
-	tags: string
-	combination_embedding: string
-	created_at: string
-	updated_at: string
-}
 
 
 type Props = {
@@ -39,7 +21,12 @@ export default function SearchItem({ watchItem }: Props) {
 						{new Date(watchItem.year_made).getFullYear()}
 					</h2>
 					<h3 className={styles.genres}>
-						{watchItem.genres}Action, Drama, etc..
+						{/* if it is more than 3 end it with ... otherwise don't. and if it is null render '' */}
+						{watchItem.genres ?
+							(watchItem.genres.length > 3
+								? watchItem.genres.slice(0, 3).join(', ') + '...'
+								: watchItem.genres.join(', '))
+							: ''}
 					</h3>
 
 				</div>
